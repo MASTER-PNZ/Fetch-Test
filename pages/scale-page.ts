@@ -13,6 +13,8 @@ export class ScalePage {
     readonly resetBtn : Locator;
     // Result value button
     readonly result : Locator;
+    // Bar buttons
+    readonly barBtn : Locator;
 
     constructor(page: Page) {
         this.left0 = page.locator("#left_0");
@@ -22,8 +24,8 @@ export class ScalePage {
         this.right1 = page.locator("#right_1");
         this.right2 = page.locator("#right_2");
         this.weighBtn = page.locator("#weigh");
-        this.resetBtn =page.locator("reset");
-        this.result = page.locator("#reset").nth(1);
+        this.resetBtn = page.getByText('Reset');
+        this.result = page.locator(".result").getByRole('button');
     }
 
     /**
@@ -40,7 +42,6 @@ export class ScalePage {
         await this.right2.fill(scaleValues2[2]);
     }
 
-    // clicks weigh button
     async clickWeigh(){
         await this.weighBtn.click();
     }
@@ -51,29 +52,17 @@ export class ScalePage {
         return result;
     }
 
-    // with logic for if statements or do this in the test itself maybe?
-    //return the array to check at second weigh in
-
     // clicks reset button
     async clickReset(){
         await this.resetBtn.click();
     }
 
-        /**
+    /**
      * Fills in the values for the input fields of the scale grid
      * @param {Array} scaleValues3 - contains values of bars in an array.
      */
     async enterScaleVal2(scaleValues3){
         await this.left0.fill(scaleValues3[0]);
         await this.right0.fill(scaleValues3[1]);
-    }
-
-    /**
-     * Takes gold bar value to click as a parameter
-     * @param {string} index
-     */
-    async clickBar(index: string){
-        let barToClick = this.page.locator(`#coin_${index}`);
-        await barToClick.click();
     }
 }
