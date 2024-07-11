@@ -23,7 +23,7 @@ test.describe('9 Gold Bars', () => {
         await expect(page.getByRole('listitem')).toBeAttached();
         // Getting the operand to compare
         let firstWeigh = await scalePage.getResult();
-        let finalBars;
+        let finalBars : any;
         // First Scale comparison + entering next set of bars to compare
         if (firstWeigh == td.equal) {
             await scalePage.clickReset();

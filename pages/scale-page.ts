@@ -33,7 +33,7 @@ export class ScalePage {
      * @param {Array} scaleValues1 - contains values of bars in an array.
      * @param {Array} scaleValues2 - contains values of bars in an array.
      */
-    async enterScaleVal(scaleValues1 , scaleValues2) {
+    async enterScaleVal(scaleValues1: Array<string> , scaleValues2: Array<string>) {
         await this.left0.fill(scaleValues1[0]);
         await this.left1.fill(scaleValues1[1]);
         await this.left2.fill(scaleValues1[2]);
@@ -61,7 +61,7 @@ export class ScalePage {
      * Fills in the values for the input fields of the scale grid
      * @param {Array} scaleValues3 - contains values of bars in an array.
      */
-    async enterScaleVal2(scaleValues3){
+    async enterScaleVal2(scaleValues3: Array<string>){
         await this.left0.fill(scaleValues3[0]);
         await this.right0.fill(scaleValues3[1]);
     }
