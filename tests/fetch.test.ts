@@ -55,7 +55,5 @@ test.describe('9 Gold Bars', () => {
         else if (secondWeigh == td.equal){
             await scalePage.clickBar(finalBars[2]);
         }
-        
     });
-
 });

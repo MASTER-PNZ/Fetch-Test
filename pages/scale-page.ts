@@ -76,13 +76,4 @@ export class ScalePage {
         let barToClick = this.page.locator(`#coin_${index}`);
         await barToClick.click();
     }
-
-    // // ui blocker method to retrieve dialog text
-    // async getPopupText(){
-    //     this.page.on('dialog', async dialog => {
-    //         let popUpText = dialog.message();
-    //         return popUpText;
-    //     });
-    
-    // }
 }
